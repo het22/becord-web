@@ -1,5 +1,7 @@
+import './App.scss';
+
 function App() {
-  return <main>becord</main>;
+  return <main></main>;
 }
 
 export default App;
