@@ -1,15 +1,16 @@
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Layout from './Component/Layout';
 import Court from './Page/Court/';
-import './App.scss';
 
 function App() {
   return (
-    <>
-      <header></header>
-      <main>
-        <Court />
-      </main>
-      <footer></footer>
-    </>
+    <BrowserRouter>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Court} />
+        </Switch>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
