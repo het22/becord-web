@@ -6,14 +6,14 @@ function View(props) {
     <div className="court">
       <section className="quarter-score">
         <h2 className="quarter">Q{props.quarter}</h2>
-        <div className="team team--home">
-          <h3 className="team__name">{props.homeName}</h3>
-          <span className="team__score">{props.homeScore}</span>
-        </div>
-        <div className="team team--away">
-          <h3 className="team__name">{props.awayName}</h3>
-          <span className="team__score">{props.awayScore}</span>
-        </div>
+        <section className="score score--home">
+          <h3 className="score__team-name">{props.homeName}</h3>
+          <span>{props.homeScore}</span>
+        </section>
+        <section className="score score--away">
+          <h3 className="score__team-name">{props.awayName}</h3>
+          <span>{props.awayScore}</span>
+        </section>
       </section>
       <section className="clock">
         <section className="times">

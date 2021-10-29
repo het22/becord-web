@@ -1,8 +1,8 @@
 .court {
-  section {
+  & > section {
     width: 100%;
   }
-  section + section {
+  & > section + section {
     border-top: 6px solid #eee;
   }
 
@@ -13,11 +13,11 @@
       order: 2;
       width: 30%;
     }
-    .team--home {
+    .score--home {
       order: 1;
       flex: 1;
     }
-    .team--away {
+    .score--away {
       order: 3;
       flex: 1;
     }
@@ -25,14 +25,14 @@
   .quarter {
     text-align: center;
   }
-  .team {
+  .score {
     text-align: center;
     padding-bottom: 12px;
   }
-  .team--home {
+  .score--home {
     color: var(--home-color);
   }
-  .team--away {
+  .score--away {
     color: var(--away-color);
   }
 
