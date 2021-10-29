@@ -7,7 +7,7 @@
     background-color: white;
   }
   & > section + section {
-    border-top: 6px solid #eee;
+    margin-top: 6px;
   }
 
   .quarter-score {
@@ -67,7 +67,7 @@
   .time--shot {
   }
   .reset-btn {
-    width: 90px;
+    width: 18%;
     height: 42px;
     font-size: 16px;
     font-weight: bold;
@@ -84,7 +84,6 @@
   .player-list {
     flex: 1;
     height: 100%;
-    padding: 0 6px;
 
     ul {
       margin: 0;
@@ -98,11 +97,8 @@
       margin-top: 6px;
     }
   }
-  .player-list--home {
-    padding-right: 3px;
-  }
-  .player-list--away {
-    padding-left: 3px;
+  .player-list + .player-list {
+    margin-left: 6px;
   }
   .player {
     display: flex;
@@ -110,8 +106,12 @@
     box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.1);
 
     .player__number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
       width: 60px;
-      text-align: center;
+      color: white;
     }
     .player__name {
       flex: 1;
@@ -120,13 +120,13 @@
   }
   .player-list--home .player {
     .player__number {
-      color: var(--home-color);
+      background-color: var(--home-color);
     }
   }
   .player-list--away .player {
     .player__number {
       order: 2;
-      color: var(--away-color);
+      background-color: var(--away-color);
     }
     .player__name {
       order: 1;
