@@ -3,9 +3,13 @@ import './App.scss';
 
 function App() {
   return (
-    <main>
-      <Court />
-    </main>
+    <>
+      <header></header>
+      <main>
+        <Court />
+      </main>
+      <footer></footer>
+    </>
   );
 }
 
