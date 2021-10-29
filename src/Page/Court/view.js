@@ -27,7 +27,34 @@ function View(props) {
         <button className="reset-btn reset-btn--14">14</button>
         <button className="reset-btn reset-btn--24">24</button>
       </section>
+      <section className="player-lists">
+        <section className="player-list player-list--home">
+          <PlayerList players={props.homePlayers} />
+        </section>
+        <section className="player-list player-list--away">
+          <PlayerList players={props.awayPlayers} />
+        </section>
+      </section>
     </div>
+  );
+}
+
+function PlayerList({ players }) {
+  return (
+    <ul>
+      {players.map((player) => (
+        <PlayerListItem key={player.number} player={player} />
+      ))}
+    </ul>
+  );
+}
+
+function PlayerListItem({ player }) {
+  return (
+    <li className="player">
+      <h3 className="player__number">{player.number}</h3>
+      <h4 className="player__name">{player.name}</h4>
+    </li>
   );
 }
 

@@ -1,4 +1,7 @@
 .court {
+  display: flex;
+  flex-direction: column;
+
   & > section {
     width: 100%;
   }
@@ -6,7 +9,7 @@
     border-top: 6px solid #eee;
   }
 
-  section.quarter-score {
+  .quarter-score {
     display: flex;
 
     .quarter {
@@ -36,7 +39,7 @@
     color: var(--away-color);
   }
 
-  section.clock {
+  .clock {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -71,5 +74,61 @@
   .reset-btn--14 {
   }
   .reset-btn--24 {
+  }
+
+  .player-lists {
+    display: flex;
+    background-color: #eee;
+  }
+  .player-list {
+    flex: 1;
+    height: 100%;
+    padding: 0 6px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      margin: 0;
+      list-style: none;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+  }
+  .player-list--home {
+    padding-right: 3px;
+  }
+  .player-list--away {
+    padding-left: 3px;
+  }
+  .player {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.1);
+
+    .player__number {
+      width: 60px;
+      text-align: center;
+    }
+    .player__name {
+      flex: 1;
+      text-align: center;
+    }
+  }
+  .player-list--home .player {
+    .player__number {
+      color: var(--home-color);
+    }
+  }
+  .player-list--away .player {
+    .player__number {
+      order: 2;
+      color: var(--away-color);
+    }
+    .player__name {
+      order: 1;
+    }
   }
 }

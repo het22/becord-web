@@ -11,7 +11,21 @@ export default class Conatiner extends React.Component {
       homeName: 'HOME',
       awayName: 'AWAY',
       homeScore: 0,
-      awayScore: 0
+      awayScore: 0,
+      homePlayers: [
+        { number: 0, name: 'name' },
+        { number: 0, name: 'name' },
+        { number: 0, name: 'name' },
+        { number: 0, name: 'name' },
+        { number: 0, name: 'name' }
+      ],
+      awayPlayers: [
+        { number: 0, name: 'name' },
+        { number: 0, name: 'name' },
+        { number: 0, name: 'name' },
+        { number: 0, name: 'name' },
+        { number: 0, name: 'name' }
+      ]
     };
   }
 
