@@ -1,9 +1,13 @@
 .court {
-  .court__section {
-  }
-  .court__section--qas {
-    display: flex;
+  section {
     width: 100%;
+  }
+  section + section {
+    border-top: 6px solid #eee;
+  }
+
+  section.quarter-score {
+    display: flex;
 
     .quarter {
       order: 2;
@@ -11,24 +15,61 @@
     }
     .team--home {
       order: 1;
-      width: 35%;
+      flex: 1;
     }
     .team--away {
       order: 3;
-      width: 35%;
+      flex: 1;
     }
   }
-
   .quarter {
     text-align: center;
   }
   .team {
     text-align: center;
+    padding-bottom: 12px;
   }
   .team--home {
     color: var(--home-color);
   }
   .team--away {
     color: var(--away-color);
+  }
+
+  section.clock {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .times {
+      order: 2;
+      width: 50%;
+    }
+    .reset-btn--14 {
+      order: 1;
+    }
+    .reset-btn--24 {
+      order: 3;
+    }
+  }
+  .times {
+  }
+  .time {
+    width: 100%;
+    text-align: center;
+  }
+  .time--game {
+  }
+  .time--shot {
+  }
+  .reset-btn {
+    width: 90px;
+    height: 42px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .reset-btn--14 {
+  }
+  .reset-btn--24 {
   }
 }

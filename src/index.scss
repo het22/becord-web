@@ -11,6 +11,14 @@ body {
   --away-color: #00a4b4;
 }
 
+button {
+  color: white;
+  background-color: black;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

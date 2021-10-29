@@ -6,6 +6,8 @@ export default class Conatiner extends React.Component {
     super(props);
     this.state = {
       quarter: 1,
+      gameSec: 720,
+      shotSec: 24,
       homeName: 'HOME',
       awayName: 'AWAY',
       homeScore: 0,
