@@ -106,7 +106,7 @@
       width: 60px;
       color: white;
     }
-    .player__name {
+    .player__info {
       flex: 1;
       text-align: center;
     }
@@ -124,7 +124,7 @@
       order: 2;
       background-color: var(--away-color);
     }
-    .player__name {
+    .player__info {
       order: 1;
     }
   }

@@ -13,18 +13,18 @@ export default class Conatiner extends React.Component {
       homeScore: 0,
       awayScore: 0,
       homePlayers: [
-        { number: 1, name: 'name' },
-        { number: 2, name: 'name' },
-        { number: 3, name: 'name' },
-        { number: 4, name: 'name' },
-        { number: 5, name: 'name' }
+        { number: 1, name: 'name', score: 0, foul: 0 },
+        { number: 2, name: 'name', score: 0, foul: 0 },
+        { number: 3, name: 'name', score: 0, foul: 0 },
+        { number: 4, name: 'name', score: 0, foul: 0 },
+        { number: 5, name: 'name', score: 0, foul: 0 }
       ],
       awayPlayers: [
-        { number: 1, name: 'name' },
-        { number: 2, name: 'name' },
-        { number: 3, name: 'name' },
-        { number: 4, name: 'name' },
-        { number: 5, name: 'name' }
+        { number: 1, name: 'name', score: 0, foul: 0 },
+        { number: 2, name: 'name', score: 0, foul: 0 },
+        { number: 3, name: 'name', score: 0, foul: 0 },
+        { number: 4, name: 'name', score: 0, foul: 0 },
+        { number: 5, name: 'name', score: 0, foul: 0 }
       ]
     };
   }

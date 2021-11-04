@@ -55,8 +55,13 @@ function PlayerList({ players, ...otherProps }) {
 function PlayerListItem({ player }) {
   return (
     <li className="player">
-      <h3 className="player__number">{player.number}</h3>
-      <h4 className="player__name">{player.name}</h4>
+      <section className="player__number">
+        <h3>{player.number}</h3>
+      </section>
+      <section className="player__info">
+        <h4 className="player__name">{player.name}</h4>
+        <span>{`${player.score}pt ${player.foul}foul`}</span>
+      </section>
     </li>
   );
 }
