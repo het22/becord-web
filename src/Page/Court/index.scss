@@ -82,25 +82,18 @@
     background-color: #eee;
   }
   .player-list {
+    margin: 0;
+    padding: 0;
     flex: 1;
     height: 100%;
-
-    ul {
-      margin: 0;
-      padding: 0;
-    }
-    li {
-      margin: 0;
-      list-style: none;
-    }
-    li + li {
-      margin-top: 6px;
-    }
   }
   .player-list + .player-list {
     margin-left: 6px;
   }
+
   .player {
+    margin: 0;
+    list-style: none;
     display: flex;
     background-color: white;
     box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.1);
@@ -117,6 +110,9 @@
       flex: 1;
       text-align: center;
     }
+  }
+  .player + .player {
+    margin-top: 6px;
   }
   .player-list--home .player {
     .player__number {
