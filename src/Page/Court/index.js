@@ -7,6 +7,7 @@ export default class Conatiner extends React.Component {
     this.state = {
       quarter: 1,
       gameSec: 720,
+      isGameSecRunning: false,
       shotSec: 24,
       homeName: 'HOME',
       awayName: 'AWAY',
@@ -29,7 +30,33 @@ export default class Conatiner extends React.Component {
     };
   }
 
+  onClickGameTime = (e) => {
+    if (this.state.isGameSecRunning) {
+      this.pauseGameTime();
+    } else {
+      this.resumeGameTime();
+    }
+  };
+  resumeGameTime() {
+    if (this.state.gameSec <= 0) return;
+
+    clearInterval(this.gameSecInterval);
+    this.gameSecInterval = setInterval(() => {
+      let gameSec = this.state.gameSec - 0.1;
+      if (gameSec <= 0) {
+        gameSec = 0;
+        this.pauseGameTime();
+      }
+      this.setState({ gameSec });
+    }, 100);
+    this.setState({ isGameSecRunning: true });
+  }
+  pauseGameTime() {
+    clearInterval(this.gameSecInterval);
+    this.setState({ isGameSecRunning: false });
+  }
+
   render() {
-    return <View {...this.state} />;
+    return <View {...this.state} onClickGameTime={this.onClickGameTime} />;
   }
 }

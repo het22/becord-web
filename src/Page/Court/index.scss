@@ -53,16 +53,17 @@
   .clock {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     .times {
       order: 2;
-      // width: 50%;
     }
     .reset-btn--14 {
+      margin-left: 12px;
       order: 1;
     }
     .reset-btn--24 {
+      margin-right: 12px;
       order: 3;
     }
   }
@@ -71,17 +72,22 @@
   .time {
     width: 100%;
     text-align: center;
+    color: #ccc;
   }
   .time--game {
     padding-top: 6px;
     line-height: 1.2;
-    font-size: 60px;
+    font-size: 90px;
   }
   .time--shot {
     padding-bottom: 6px;
     line-height: 0.9;
-    font-size: 48px;
+    font-size: 60px;
   }
+  .time--running {
+    color: black;
+  }
+
   .reset-btn {
     margin-bottom: 12px;
     align-self: flex-end;

@@ -22,7 +22,13 @@ function View(props) {
       </section>
       <section className="clock">
         <section className="times">
-          <h2 className="time time--game">
+          <h2
+            className={
+              `time time--game` +
+              (props.isGameSecRunning ? ' time--running' : '')
+            }
+            onClick={props.onClickGameTime}
+          >
             {Time.formatGameTime(props.gameSec)}
           </h2>
           <h3 className="time time--shot">
