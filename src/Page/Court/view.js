@@ -1,4 +1,5 @@
 import * as Time from '../../Util/time';
+import * as Score from '../../Util/score';
 import './index.scss';
 
 function View(props) {
@@ -8,11 +9,11 @@ function View(props) {
         <h2 className="quarter">Q{props.quarter}</h2>
         <section className="score score--home">
           <h3 className="score__team-name">{props.homeName}</h3>
-          <span>{props.homeScore}</span>
+          <span>{Score.formatTeamScore(props.homeScore)}</span>
         </section>
         <section className="score score--away">
           <h3 className="score__team-name">{props.awayName}</h3>
-          <span>{props.awayScore}</span>
+          <span>{Score.formatTeamScore(props.awayScore)}</span>
         </section>
       </section>
       <section className="clock">
