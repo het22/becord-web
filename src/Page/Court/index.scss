@@ -11,32 +11,42 @@
   }
 
   .quarter-score {
+    padding: 0 12px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
 
     .quarter {
       order: 2;
-      width: 30%;
     }
     .score--home {
       order: 1;
-      flex: 1;
     }
     .score--away {
       order: 3;
-      flex: 1;
     }
   }
   .quarter {
     text-align: center;
+    font-size: 60px;
   }
   .score {
-    text-align: center;
-    padding-bottom: 12px;
+    .score__team-name {
+      font-size: 30px;
+    }
+    .score__team-score {
+      line-height: 0.6;
+      font-size: 72px;
+      font-weight: bold;
+    }
   }
   .score--home {
+    text-align: left;
     color: var(--home-color);
   }
   .score--away {
+    text-align: right;
     color: var(--away-color);
   }
 
@@ -47,7 +57,7 @@
 
     .times {
       order: 2;
-      width: 50%;
+      // width: 50%;
     }
     .reset-btn--14 {
       order: 1;
@@ -63,10 +73,18 @@
     text-align: center;
   }
   .time--game {
+    padding-top: 6px;
+    line-height: 1.2;
+    font-size: 60px;
   }
   .time--shot {
+    padding-bottom: 6px;
+    line-height: 0.9;
+    font-size: 48px;
   }
   .reset-btn {
+    margin-bottom: 12px;
+    align-self: flex-end;
     width: 18%;
     height: 42px;
     font-size: 16px;
@@ -103,12 +121,20 @@
       align-items: center;
       justify-content: center;
       margin: 0;
-      width: 60px;
+      width: 48px;
       color: white;
     }
     .player__info {
+      padding: 6px 0 3px 0;
       flex: 1;
       text-align: center;
+    }
+    .player__name {
+      line-height: 1.2;
+      font-size: 18px;
+    }
+    .player__stat {
+      font-size: 12px;
     }
   }
   .player + .player {

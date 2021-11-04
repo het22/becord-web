@@ -9,11 +9,15 @@ function View(props) {
         <h2 className="quarter">Q{props.quarter}</h2>
         <section className="score score--home">
           <h3 className="score__team-name">{props.homeName}</h3>
-          <span>{Score.formatTeamScore(props.homeScore)}</span>
+          <span className="score__team-score">
+            {Score.formatTeamScore(props.homeScore)}
+          </span>
         </section>
         <section className="score score--away">
           <h3 className="score__team-name">{props.awayName}</h3>
-          <span>{Score.formatTeamScore(props.awayScore)}</span>
+          <span className="score__team-score">
+            {Score.formatTeamScore(props.awayScore)}
+          </span>
         </section>
       </section>
       <section className="clock">
@@ -25,8 +29,8 @@ function View(props) {
             {Time.formatShotTime(props.shotSec)}
           </h3>
         </section>
-        <button className="reset-btn reset-btn--14">14</button>
-        <button className="reset-btn reset-btn--24">24</button>
+        <button className="reset-btn reset-btn--14">14s</button>
+        <button className="reset-btn reset-btn--24">24s</button>
       </section>
       <section className="player-lists">
         <PlayerList
@@ -60,7 +64,7 @@ function PlayerListItem({ player }) {
       </section>
       <section className="player__info">
         <h4 className="player__name">{player.name}</h4>
-        <span>{`${player.score}pt ${player.foul}foul`}</span>
+        <span className="player__stat">{`${player.score}pt ${player.foul}foul`}</span>
       </section>
     </li>
   );
