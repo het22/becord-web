@@ -10,23 +10,23 @@ export default class Conatiner extends React.Component {
       shotSec: 24,
       isGameSecRunning: false,
       isShotSecRunning: false,
-      homeName: 'HOME',
-      awayName: 'AWAY',
-      homeScore: 0,
-      awayScore: 0,
+      homeName: 'HEATS',
+      awayName: 'LAKERS',
+      homeScore: 123,
+      awayScore: 109,
       homePlayers: [
-        { number: 1, name: 'name', score: 0, foul: 0 },
-        { number: 2, name: 'name', score: 0, foul: 0 },
-        { number: 3, name: 'name', score: 0, foul: 0 },
-        { number: 4, name: 'name', score: 0, foul: 0 },
-        { number: 5, name: 'name', score: 0, foul: 0 }
+        { number: 7, name: 'Lowry', score: 11, foul: 3 },
+        { number: 13, name: 'Adebayo', score: 19, foul: 2 },
+        { number: 14, name: 'Herro', score: 27, foul: 0 },
+        { number: 17, name: 'Tucker', score: 15, foul: 4 },
+        { number: 22, name: 'Butler', score: 31, foul: 3 }
       ],
       awayPlayers: [
-        { number: 1, name: 'name', score: 0, foul: 0 },
-        { number: 2, name: 'name', score: 0, foul: 0 },
-        { number: 3, name: 'name', score: 0, foul: 0 },
-        { number: 4, name: 'name', score: 0, foul: 0 },
-        { number: 5, name: 'name', score: 0, foul: 0 }
+        { number: 0, name: 'Westbrook', score: 13, foul: 3 },
+        { number: 3, name: 'Davis', score: 29, foul: 3 },
+        { number: 4, name: 'Rondo', score: 7, foul: 1 },
+        { number: 6, name: 'James', score: 41, foul: 2 },
+        { number: 10, name: 'Jordan', score: 6, foul: 4 }
       ]
     };
   }
