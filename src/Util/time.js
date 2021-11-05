@@ -5,13 +5,13 @@ export function formatGameTime(time) {
     return `${min}:${sec >= 10 ? sec : `0${sec}`}`;
   } else {
     const sec = Math.floor(time);
-    const mil = Math.round((time - sec) * 10);
+    const mil = Math.floor((time - sec) * 10);
     return `${sec}.${mil}`;
   }
 }
 
 export function formatShotTime(time) {
   const sec = Math.floor(time);
-  const mil = Math.round((time - sec) * 10);
+  const mil = Math.floor((time - sec) * 10);
   return `${sec}.${mil}`;
 }
