@@ -31,12 +31,28 @@ function View(props) {
           >
             {Time.formatGameTime(props.gameSec)}
           </h2>
-          <h3 className="time time--shot">
+          <h3
+            className={
+              `time time--shot` +
+              (props.isShotSecRunning ? ' time--running' : '')
+            }
+            onClick={props.onClickShotTime}
+          >
             {Time.formatShotTime(props.shotSec)}
           </h3>
         </section>
-        <button className="reset-btn reset-btn--14">14s</button>
-        <button className="reset-btn reset-btn--24">24s</button>
+        <button
+          className="reset-btn reset-btn--14"
+          onClick={props.onClickReset14}
+        >
+          14s
+        </button>
+        <button
+          className="reset-btn reset-btn--24"
+          onClick={props.onClickReset24}
+        >
+          24s
+        </button>
       </section>
       <section className="player-lists">
         <PlayerList

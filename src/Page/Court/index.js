@@ -7,8 +7,9 @@ export default class Conatiner extends React.Component {
     this.state = {
       quarter: 1,
       gameSec: 720,
-      isGameSecRunning: false,
       shotSec: 24,
+      isGameSecRunning: false,
+      isShotSecRunning: false,
       homeName: 'HOME',
       awayName: 'AWAY',
       homeScore: 0,
@@ -30,33 +31,76 @@ export default class Conatiner extends React.Component {
     };
   }
 
-  onClickGameTime = (e) => {
-    if (this.state.isGameSecRunning) {
-      this.pauseGameTime();
-    } else {
-      this.resumeGameTime();
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.isGameSecRunning !== this.state.isGameSecRunning) {
+      this.onChangeGameSecRunning();
     }
-  };
-  resumeGameTime() {
-    if (this.state.gameSec <= 0) return;
+    if (prevState.isShotSecRunning !== this.state.isShotSecRunning) {
+      this.onChangeShotSecRunning();
+    }
+    if (prevState.gameSec !== this.state.gameSec) {
+      this.onChangeGameSec();
+    }
+    if (prevState.shotSec !== this.state.shotSec) {
+      this.onChangeShotSec();
+    }
+  }
 
+  onChangeGameSecRunning() {
     clearInterval(this.gameSecInterval);
-    this.gameSecInterval = setInterval(() => {
-      let gameSec = this.state.gameSec - 0.1;
-      if (gameSec <= 0) {
-        gameSec = 0;
-        this.pauseGameTime();
-      }
-      this.setState({ gameSec });
-    }, 100);
-    this.setState({ isGameSecRunning: true });
+    if (this.state.isGameSecRunning) {
+      this.gameSecInterval = setInterval(() => {
+        this.setState((prevState) => ({ gameSec: prevState.gameSec - 0.1 }));
+      }, 100);
+    }
   }
-  pauseGameTime() {
-    clearInterval(this.gameSecInterval);
-    this.setState({ isGameSecRunning: false });
+  onChangeShotSecRunning() {
+    clearInterval(this.shotSecInterval);
+    if (this.state.isShotSecRunning) {
+      this.shotSecInterval = setInterval(() => {
+        this.setState((prevState) => ({ shotSec: prevState.shotSec - 0.1 }));
+      }, 100);
+    }
   }
+  onChangeGameSec() {
+    if (this.state.gameSec <= 0) {
+      this.setState({ gameSec: 0, isGameSecRunning: false });
+    }
+  }
+  onChangeShotSec() {
+    if (this.state.shotSec <= 0) {
+      this.setState({ shotSec: 0, isShotSecRunning: false });
+    }
+  }
+
+  onClickGameTime = (e) => {
+    if (this.state.gameSec <= 0) return;
+    this.setState((prevState) => ({
+      isGameSecRunning: !prevState.isGameSecRunning
+    }));
+  };
+  onClickShotTime = (e) => {
+    if (this.state.shotSec <= 0) return;
+    this.setState((prevState) => ({
+      isShotSecRunning: !prevState.isShotSecRunning
+    }));
+  };
+  onClickReset14 = () => {
+    this.setState({ shotSec: 14, isShotSecRunning: false });
+  };
+  onClickReset24 = () => {
+    this.setState({ shotSec: 24, isShotSecRunning: false });
+  };
 
   render() {
-    return <View {...this.state} onClickGameTime={this.onClickGameTime} />;
+    return (
+      <View
+        {...this.state}
+        onClickGameTime={this.onClickGameTime}
+        onClickShotTime={this.onClickShotTime}
+        onClickReset14={this.onClickReset14}
+        onClickReset24={this.onClickReset24}
+      />
+    );
   }
 }
