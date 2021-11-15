@@ -54,7 +54,7 @@ footer {
 }
 
 .nav-wrapper {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -68,17 +68,20 @@ footer {
   background-color: rgba($color: black, $alpha: 0.3);
 
   nav {
+    visibility: visible;
     left: 0;
   }
 }
 
 nav {
   position: absolute;
+  visibility: hidden;
   top: 0;
   left: calc(var(--nav-width) * -1);
   width: var(--nav-width);
   height: 100%;
   color: white;
   background-color: black;
+  box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.1);
   transition: 0.1s left;
 }
