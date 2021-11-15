@@ -52,3 +52,33 @@ footer {
     content: '|';
   }
 }
+
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  transition: 0.1s background-color;
+  --nav-width: 210px;
+}
+.nav-wrapper[nav-open='true'] {
+  pointer-events: visible;
+  background-color: rgba($color: black, $alpha: 0.3);
+
+  nav {
+    left: 0;
+  }
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: calc(var(--nav-width) * -1);
+  width: var(--nav-width);
+  height: 100%;
+  color: white;
+  background-color: black;
+  transition: 0.1s left;
+}
