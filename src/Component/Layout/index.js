@@ -1,3 +1,4 @@
+import { URL } from '../../Util/constant';
 import './index.scss';
 
 function Layout(props) {
@@ -9,7 +10,21 @@ function Layout(props) {
         <button className="header-btn header-btn--edit" />
       </header>
       <main>{props.children}</main>
-      <footer></footer>
+      <footer>
+        <ul className="footer-menus">
+          <li className="footer-menu">
+            <a href={URL.NGHL_SUPPORT} target="_blank">
+              NGHL
+            </a>
+          </li>
+          <li className="footer-menu">
+            <a href={URL.BECORD_SUPPORT} target="_blank">
+              Help
+            </a>
+          </li>
+          <li className="footer-menu">Report</li>
+        </ul>
+      </footer>
     </>
   );
 }

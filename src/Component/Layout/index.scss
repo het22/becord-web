@@ -1,9 +1,10 @@
 header {
+  margin-bottom: 6px;
   padding: 0 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 36px;
+  height: 48px;
   background-color: white;
 
   .header-btn {
@@ -23,18 +24,31 @@ header {
 
   .header-title {
     font-size: 24px;
-    padding-top: 2px;
+    padding-top: 3px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 }
-header + main {
-  margin-top: 6px;
-}
-
-main {
-}
 
 footer {
+  padding: 60px 12px 30px 12px;
+
+  .footer-menus {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .footer-menu {
+    color: #999;
+    list-style: none;
+
+    a {
+      color: #999;
+    }
+  }
+  .footer-menu + .footer-menu::before {
+    padding: 0 12px;
+    content: '|';
+  }
 }
