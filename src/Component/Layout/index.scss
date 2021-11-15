@@ -1,4 +1,36 @@
 header {
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  background-color: white;
+
+  .header-btn {
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 0;
+    background: none;
+    background-size: contain;
+  }
+  .header-btn--menu {
+    background-image: url('../../Asset/Image/menu-icon.png');
+  }
+  .header-btn--edit {
+    background-image: url('../../Asset/Image/edit-icon.png');
+  }
+
+  .header-title {
+    font-size: 24px;
+    padding-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+header + main {
+  margin-top: 6px;
 }
 
 main {
