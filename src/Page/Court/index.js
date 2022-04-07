@@ -57,7 +57,7 @@ export default class Conatiner extends React.Component {
     clearInterval(this.gameSecInterval);
     if (this.state.isGameSecRunning) {
       this.gameSecInterval = setInterval(() => {
-        this.setState((prevState) => ({ gameSec: prevState.gameSec - 0.1 }));
+        this.setState(prevState => ({ gameSec: prevState.gameSec - 0.1 }));
       }, 100);
     }
   }
@@ -65,7 +65,7 @@ export default class Conatiner extends React.Component {
     clearInterval(this.shotSecInterval);
     if (this.state.isShotSecRunning) {
       this.shotSecInterval = setInterval(() => {
-        this.setState((prevState) => ({ shotSec: prevState.shotSec - 0.1 }));
+        this.setState(prevState => ({ shotSec: prevState.shotSec - 0.1 }));
       }, 100);
     }
   }
@@ -80,15 +80,15 @@ export default class Conatiner extends React.Component {
     }
   }
 
-  onClickGameTime = (e) => {
+  onClickGameTime = e => {
     if (this.state.gameSec <= 0) return;
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       isGameSecRunning: !prevState.isGameSecRunning
     }));
   };
-  onClickShotTime = (e) => {
+  onClickShotTime = e => {
     if (this.state.shotSec <= 0) return;
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       isShotSecRunning: !prevState.isShotSecRunning
     }));
   };

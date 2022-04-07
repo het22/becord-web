@@ -79,7 +79,7 @@ function View(props) {
 function PlayerList({ players, ...otherProps }) {
   return (
     <ul {...otherProps}>
-      {players.map((player) => (
+      {players.map(player => (
         <PlayerListItem key={player.number} player={player} />
       ))}
     </ul>
