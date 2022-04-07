@@ -46,6 +46,13 @@ export default class Conatiner extends React.Component {
     }
   }
 
+  onChangeHomeName = e => {
+    this.setState({ homeName: e.target.value });
+  };
+  onChangeAwayName = e => {
+    this.setState({ awayName: e.target.value });
+  };
+
   onChangeGameSecRunning() {
     clearInterval(this.gameSecInterval);
     if (this.state.isGameSecRunning) {
@@ -96,6 +103,8 @@ export default class Conatiner extends React.Component {
     return (
       <View
         {...this.state}
+        onChangeHomeName={this.onChangeHomeName}
+        onChangeAwayName={this.onChangeAwayName}
         onClickGameTime={this.onClickGameTime}
         onClickShotTime={this.onClickShotTime}
         onClickReset14={this.onClickReset14}

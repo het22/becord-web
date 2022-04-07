@@ -8,13 +8,21 @@ function View(props) {
       <section className="quarter-score">
         <h2 className="quarter">Q{props.quarter}</h2>
         <section className="score score--home">
-          <h3 className="score__team-name">{props.homeName}</h3>
+          <input
+            className="score__team-name"
+            value={props.homeName}
+            onChange={props.onChangeHomeName}
+          />
           <span className="score__team-score">
             {Score.formatTeamScore(props.homeScore)}
           </span>
         </section>
         <section className="score score--away">
-          <h3 className="score__team-name">{props.awayName}</h3>
+          <input
+            className="score__team-name"
+            value={props.awayName}
+            onChange={props.onChangeAwayName}
+          />
           <span className="score__team-score">
             {Score.formatTeamScore(props.awayScore)}
           </span>

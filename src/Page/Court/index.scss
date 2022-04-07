@@ -33,21 +33,35 @@
   }
   .score {
     .score__team-name {
+      display: block;
+      width: 100%;
       font-size: 30px;
+      font-weight: bold;
+      border: none;
+      outline: none;
     }
     .score__team-score {
       line-height: 0.6;
       font-size: 72px;
       font-weight: bold;
+      pointer-events: none;
     }
   }
   .score--home {
     text-align: left;
     color: var(--home-color);
+    .score__team-name {
+      text-align: left;
+      color: var(--home-color);
+    }
   }
   .score--away {
     text-align: right;
     color: var(--away-color);
+    .score__team-name {
+      text-align: right;
+      color: var(--away-color);
+    }
   }
 
   .clock {
@@ -73,6 +87,7 @@
     width: 100%;
     text-align: center;
     color: #ccc;
+    cursor: pointer;
   }
   .time--game {
     padding-top: 6px;
