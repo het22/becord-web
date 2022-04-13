@@ -1,15 +1,12 @@
 import React from 'react';
 import View from './view';
+import withTimer from './withTimer';
 
-export default class Conatiner extends React.Component {
+class Conatiner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       quarter: 1,
-      gameSec: 720,
-      shotSec: 24,
-      isGameSecRunning: false,
-      isShotSecRunning: false,
       homeName: 'HEATS',
       awayName: 'LAKERS',
       homeScore: 123,
@@ -31,21 +28,6 @@ export default class Conatiner extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.isGameSecRunning !== this.state.isGameSecRunning) {
-      this.onChangeGameSecRunning();
-    }
-    if (prevState.isShotSecRunning !== this.state.isShotSecRunning) {
-      this.onChangeShotSecRunning();
-    }
-    if (prevState.gameSec !== this.state.gameSec) {
-      this.onChangeGameSec();
-    }
-    if (prevState.shotSec !== this.state.shotSec) {
-      this.onChangeShotSec();
-    }
-  }
-
   onChangeHomeName = e => {
     this.setState({ homeName: e.target.value });
   };
@@ -53,56 +35,37 @@ export default class Conatiner extends React.Component {
     this.setState({ awayName: e.target.value });
   };
 
-  onChangeGameSecRunning() {
-    clearInterval(this.gameSecInterval);
-    if (this.state.isGameSecRunning) {
-      this.gameSecInterval = setInterval(() => {
-        this.setState(prevState => ({ gameSec: prevState.gameSec - 0.1 }));
-      }, 100);
-    }
-  }
-  onChangeShotSecRunning() {
-    clearInterval(this.shotSecInterval);
-    if (this.state.isShotSecRunning) {
-      this.shotSecInterval = setInterval(() => {
-        this.setState(prevState => ({ shotSec: prevState.shotSec - 0.1 }));
-      }, 100);
-    }
-  }
-  onChangeGameSec() {
-    if (this.state.gameSec <= 0) {
-      this.setState({ gameSec: 0, isGameSecRunning: false });
-    }
-  }
-  onChangeShotSec() {
-    if (this.state.shotSec <= 0) {
-      this.setState({ shotSec: 0, isShotSecRunning: false });
-    }
-  }
-
   onClickGameTime = e => {
-    if (this.state.gameSec <= 0) return;
-    this.setState(prevState => ({
-      isGameSecRunning: !prevState.isGameSecRunning
-    }));
+    if (this.props.isGameClockRunning) {
+      this.props.pauseGameTimer();
+    } else {
+      this.props.resumeGameTimer();
+    }
   };
   onClickShotTime = e => {
-    if (this.state.shotSec <= 0) return;
-    this.setState(prevState => ({
-      isShotSecRunning: !prevState.isShotSecRunning
-    }));
+    if (this.props.isShotClockRunning) {
+      this.props.pauseShotTimer();
+    } else {
+      this.props.resumeShotTimer();
+    }
   };
   onClickReset14 = () => {
-    this.setState({ shotSec: 14, isShotSecRunning: false });
+    this.props.pauseShotTimer();
+    this.props.setShotSec(14);
   };
   onClickReset24 = () => {
-    this.setState({ shotSec: 24, isShotSecRunning: false });
+    this.props.pauseShotTimer();
+    this.props.setShotSec(24);
   };
 
   render() {
     return (
       <View
         {...this.state}
+        gameSec={this.props.gameSec}
+        shotSec={this.props.shotSec}
+        isGameClockRunning={this.props.isGameClockRunning}
+        isShotClockRunning={this.props.isShotClockRunning}
         onChangeHomeName={this.onChangeHomeName}
         onChangeAwayName={this.onChangeAwayName}
         onClickGameTime={this.onClickGameTime}
@@ -113,3 +76,5 @@ export default class Conatiner extends React.Component {
     );
   }
 }
+
+export default withTimer(Conatiner);

@@ -33,7 +33,7 @@ function View(props) {
           <h2
             className={
               `time time--game` +
-              (props.isGameSecRunning ? ' time--running' : '')
+              (props.isGameClockRunning ? ' time--running' : '')
             }
             onClick={props.onClickGameTime}
           >
@@ -42,7 +42,7 @@ function View(props) {
           <h3
             className={
               `time time--shot` +
-              (props.isShotSecRunning ? ' time--running' : '')
+              (props.isShotClockRunning ? ' time--running' : '')
             }
             onClick={props.onClickShotTime}
           >
