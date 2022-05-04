@@ -26,7 +26,7 @@ export default function withTimer(Component) {
       this.setState({ shotSec: sec >= 0 ? sec : 0 });
     };
     addShotSec = sec => {
-      this.setGameSec(this.state.gameSec + sec);
+      this.setShotSec(this.state.shotSec + sec);
     };
 
     resumeGameTimer = () => {

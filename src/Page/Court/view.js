@@ -76,14 +76,41 @@ function View(props) {
             {Time.formatShotTime(props.shotSec)}
           </h3>
           <section className="clock_btns clock_btns--left">
-            <button className="clock_btn">+</button>
-            <button className="clock_btn">-</button>
-            <button className="clock_btn clock_btn--14">14s</button>
+            <button className="clock_btn" onClick={props.onClickShotTimeLeftUp}>
+              +
+            </button>
+            <button
+              className="clock_btn"
+              onClick={props.onClickShotTimeLeftDown}
+            >
+              -
+            </button>
+            <button
+              className="clock_btn clock_btn--14"
+              onClick={props.onClickReset14}
+            >
+              14s
+            </button>
           </section>
           <section className="clock_btns clock_btns--right">
-            <button className="clock_btn">+</button>
-            <button className="clock_btn">-</button>
-            <button className="clock_btn clock_btn--24">24s</button>
+            <button
+              className="clock_btn"
+              onClick={props.onClickShotTimeRightUp}
+            >
+              +
+            </button>
+            <button
+              className="clock_btn"
+              onClick={props.onClickShotTimeRightDown}
+            >
+              -
+            </button>
+            <button
+              className="clock_btn clock_btn--24"
+              onClick={props.onClickReset24}
+            >
+              24s
+            </button>
           </section>
         </section>
       </section>

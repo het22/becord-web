@@ -69,6 +69,18 @@ class Conatiner extends React.Component {
   onClickGameTimeRightDown = () => {
     this.props.addGameSec(this.props.gameSec >= 60.1 ? -1 : -0.1);
   };
+  onClickShotTimeLeftUp = () => {
+    this.props.addShotSec(1);
+  };
+  onClickShotTimeLeftDown = () => {
+    this.props.addShotSec(-1);
+  };
+  onClickShotTimeRightUp = () => {
+    this.props.addShotSec(0.1);
+  };
+  onClickShotTimeRightDown = () => {
+    this.props.addShotSec(-0.1);
+  };
 
   render() {
     return (
@@ -88,6 +100,10 @@ class Conatiner extends React.Component {
         onClickGameTimeLeftDown={this.onClickGameTimeLeftDown}
         onClickGameTimeRightUp={this.onClickGameTimeRightUp}
         onClickGameTimeRightDown={this.onClickGameTimeRightDown}
+        onClickShotTimeLeftUp={this.onClickShotTimeLeftUp}
+        onClickShotTimeLeftDown={this.onClickShotTimeLeftDown}
+        onClickShotTimeRightUp={this.onClickShotTimeRightUp}
+        onClickShotTimeRightDown={this.onClickShotTimeRightDown}
       />
     );
   }
