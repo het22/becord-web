@@ -75,6 +75,16 @@ function View(props) {
           >
             {Time.formatShotTime(props.shotSec)}
           </h3>
+          <section className="clock_btns clock_btns--left">
+            <button className="clock_btn">+</button>
+            <button className="clock_btn">-</button>
+            <button className="clock_btn clock_btn--14">14s</button>
+          </section>
+          <section className="clock_btns clock_btns--right">
+            <button className="clock_btn">+</button>
+            <button className="clock_btn">-</button>
+            <button className="clock_btn clock_btn--24">24s</button>
+          </section>
         </section>
       </section>
       {/* <section className="clock">
