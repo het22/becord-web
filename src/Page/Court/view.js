@@ -28,7 +28,56 @@ function View(props) {
           </span>
         </section>
       </section>
-      <section className="clock">
+      <section className="clocks">
+        <section className="game_clock">
+          <h2
+            className={
+              `time time--game` +
+              (props.isGameClockRunning ? ' time--running' : '')
+            }
+            onClick={props.onClickGameTime}
+          >
+            {Time.formatGameTime(props.gameSec)}
+          </h2>
+          <section className="clock_btns clock_btns--left">
+            <button className="clock_btn" onClick={props.onClickGameTimeLeftUp}>
+              +
+            </button>
+            <button
+              className="clock_btn"
+              onClick={props.onClickGameTimeLeftDown}
+            >
+              -
+            </button>
+          </section>
+          <section className="clock_btns clock_btns--right">
+            <button
+              className="clock_btn"
+              onClick={props.onClickGameTimeRightUp}
+            >
+              +
+            </button>
+            <button
+              className="clock_btn"
+              onClick={props.onClickGameTimeRightDown}
+            >
+              -
+            </button>
+          </section>
+        </section>
+        <section className="shot_clock">
+          <h3
+            className={
+              `time time--shot` +
+              (props.isShotClockRunning ? ' time--running' : '')
+            }
+            onClick={props.onClickShotTime}
+          >
+            {Time.formatShotTime(props.shotSec)}
+          </h3>
+        </section>
+      </section>
+      {/* <section className="clock">
         <section className="times">
           <h2
             className={
@@ -61,7 +110,7 @@ function View(props) {
         >
           24s
         </button>
-      </section>
+      </section> */}
       <section className="player-lists">
         <PlayerList
           className="player-list player-list--home"

@@ -10,7 +10,7 @@ export default function withTimer(Component) {
 
       this.state = {
         gameSec: 720,
-        shotSec: 1,
+        shotSec: 24,
         isGameClockRunning: false,
         isShotClockRunning: false
       };
@@ -19,8 +19,14 @@ export default function withTimer(Component) {
     setGameSec = sec => {
       this.setState({ gameSec: sec >= 0 ? sec : 0 });
     };
+    addGameSec = sec => {
+      this.setGameSec(this.state.gameSec + sec);
+    };
     setShotSec = sec => {
       this.setState({ shotSec: sec >= 0 ? sec : 0 });
+    };
+    addShotSec = sec => {
+      this.setGameSec(this.state.gameSec + sec);
     };
 
     resumeGameTimer = () => {
@@ -77,7 +83,9 @@ export default function withTimer(Component) {
           isGameClockRunning={this.state.isGameClockRunning}
           isShotClockRunning={this.state.isShotClockRunning}
           setGameSec={this.setGameSec}
+          addGameSec={this.addGameSec}
           setShotSec={this.setShotSec}
+          addShotSec={this.addShotSec}
           resumeGameTimer={this.resumeGameTimer}
           resumeShotTimer={this.resumeShotTimer}
           pauseGameTimer={this.pauseGameTimer}
