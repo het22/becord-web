@@ -1,6 +1,5 @@
 import React from 'react';
 import View from './view';
-import withTimer from './withTimer';
 
 class Conatiner extends React.Component {
   constructor(props) {
@@ -35,78 +34,15 @@ class Conatiner extends React.Component {
     this.setState({ awayName: e.target.value });
   };
 
-  onClickGameTime = e => {
-    if (this.props.isGameClockRunning) {
-      this.props.pauseGameTimer();
-    } else {
-      this.props.resumeGameTimer();
-    }
-  };
-  onClickShotTime = e => {
-    if (this.props.isShotClockRunning) {
-      this.props.pauseShotTimer();
-    } else {
-      this.props.resumeShotTimer();
-    }
-  };
-  onClickReset14 = () => {
-    this.props.pauseShotTimer();
-    this.props.setShotSec(14);
-  };
-  onClickReset24 = () => {
-    this.props.pauseShotTimer();
-    this.props.setShotSec(24);
-  };
-  onClickGameTimeLeftUp = () => {
-    this.props.addGameSec(this.props.gameSec >= 60 ? 60 : 1);
-  };
-  onClickGameTimeLeftDown = () => {
-    this.props.addGameSec(this.props.gameSec >= 61 ? -60 : -1);
-  };
-  onClickGameTimeRightUp = () => {
-    this.props.addGameSec(this.props.gameSec >= 60 ? 1 : 0.1);
-  };
-  onClickGameTimeRightDown = () => {
-    this.props.addGameSec(this.props.gameSec >= 60.1 ? -1 : -0.1);
-  };
-  onClickShotTimeLeftUp = () => {
-    this.props.addShotSec(1);
-  };
-  onClickShotTimeLeftDown = () => {
-    this.props.addShotSec(-1);
-  };
-  onClickShotTimeRightUp = () => {
-    this.props.addShotSec(0.1);
-  };
-  onClickShotTimeRightDown = () => {
-    this.props.addShotSec(-0.1);
-  };
-
   render() {
     return (
       <View
         {...this.state}
-        gameSec={this.props.gameSec}
-        shotSec={this.props.shotSec}
-        isGameClockRunning={this.props.isGameClockRunning}
-        isShotClockRunning={this.props.isShotClockRunning}
         onChangeHomeName={this.onChangeHomeName}
         onChangeAwayName={this.onChangeAwayName}
-        onClickGameTime={this.onClickGameTime}
-        onClickShotTime={this.onClickShotTime}
-        onClickReset14={this.onClickReset14}
-        onClickReset24={this.onClickReset24}
-        onClickGameTimeLeftUp={this.onClickGameTimeLeftUp}
-        onClickGameTimeLeftDown={this.onClickGameTimeLeftDown}
-        onClickGameTimeRightUp={this.onClickGameTimeRightUp}
-        onClickGameTimeRightDown={this.onClickGameTimeRightDown}
-        onClickShotTimeLeftUp={this.onClickShotTimeLeftUp}
-        onClickShotTimeLeftDown={this.onClickShotTimeLeftDown}
-        onClickShotTimeRightUp={this.onClickShotTimeRightUp}
-        onClickShotTimeRightDown={this.onClickShotTimeRightDown}
       />
     );
   }
 }
 
-export default withTimer(Conatiner);
+export default Conatiner;

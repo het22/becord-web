@@ -1,0 +1,93 @@
+.clocks {
+  .clock {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+
+    .clock_btns {
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .clock_btns--left {
+      order: 1;
+    }
+    .time {
+      order: 2;
+    }
+    .clock_btns--right {
+      order: 3;
+    }
+    .clock_btn {
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 0;
+    }
+  }
+  .clock--game {
+    .clock_btns {
+      display: flex;
+      flex-direction: column;
+      margin-top: auto;
+      width: 36px;
+      min-width: 36px;
+      height: 60px;
+    }
+    .clock_btn {
+      display: block;
+      flex: 1;
+      & + .clock_btn {
+        margin-top: 1px;
+      }
+    }
+  }
+  .clock--shot {
+    padding-top: 0;
+
+    .clock_btns {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1px;
+      width: 72px;
+      min-width: 72px;
+      height: 60px;
+    }
+    .clock_btns--left {
+      .clock_btn {
+        grid-column: 1;
+      }
+      .clock_btn--14 {
+        grid-column: 2;
+        grid-row: 1 / 3;
+      }
+    }
+    .clock_btns--right {
+      .clock_btn {
+        grid-column: 2;
+      }
+      .clock_btn--24 {
+        grid-column: 1;
+        grid-row: 1 / 3;
+      }
+    }
+  }
+
+  .time {
+    width: 100%;
+    text-align: center;
+    color: #ccc;
+    cursor: pointer;
+  }
+  .time--game {
+    padding-top: 6px;
+    line-height: 1.2;
+    font-size: 90px;
+  }
+  .time--shot {
+    padding-bottom: 6px;
+    line-height: 0.9;
+    font-size: 60px;
+  }
+  .time--running {
+    color: black;
+  }
+}
