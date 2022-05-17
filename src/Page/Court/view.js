@@ -114,40 +114,6 @@ function View(props) {
           </section>
         </section>
       </section>
-      {/* <section className="clock">
-        <section className="times">
-          <h2
-            className={
-              `time time--game` +
-              (props.isGameClockRunning ? ' time--running' : '')
-            }
-            onClick={props.onClickGameTime}
-          >
-            {Time.formatGameTime(props.gameSec)}
-          </h2>
-          <h3
-            className={
-              `time time--shot` +
-              (props.isShotClockRunning ? ' time--running' : '')
-            }
-            onClick={props.onClickShotTime}
-          >
-            {Time.formatShotTime(props.shotSec)}
-          </h3>
-        </section>
-        <button
-          className="reset-btn reset-btn--14"
-          onClick={props.onClickReset14}
-        >
-          14s
-        </button>
-        <button
-          className="reset-btn reset-btn--24"
-          onClick={props.onClickReset24}
-        >
-          24s
-        </button>
-      </section> */}
       <section className="player-lists">
         <PlayerList
           className="player-list player-list--home"
