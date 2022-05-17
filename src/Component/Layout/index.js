@@ -1,12 +1,22 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setTitle } from '../../Store/Reducers/game';
 import { URL } from '../../Util/constant';
 import './index.scss';
 
 function Layout(props) {
+  const dispatch = useDispatch();
+  const title = useSelector(({ game }) => game.title);
+
+  useEffect(() => {
+    dispatch(setTitle('NBA FINAL - GAME 1'));
+  }, []);
+
   return (
     <>
       <header>
         <button className="header-btn header-btn--menu" />
-        <h1 className="header-title">NBA FINAL - GAME 1</h1>
+        <h1 className="header-title">{title}</h1>
         <button className="header-btn header-btn--edit" />
       </header>
       <main>{props.children}</main>
